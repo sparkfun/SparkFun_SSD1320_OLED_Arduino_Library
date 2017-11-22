@@ -1,0 +1,78 @@
+#######################################
+# Syntax Coloring Map For SFE_Flexible OLED
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+SSD1320	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+begin	KEYWORD2
+
+command KEYwORD2
+data KEYWORD2
+setColumnAddress KEYWORD2
+setRowAddress KEYWORD2
+
+clearDisplay KEYWORD2
+display KEYWORD2
+setCursor KEYWORD2
+
+invert KEYWORD2
+setContrast KEYWORD2
+flipVertical KEYWORD2
+flipHorizontal KEYWORD2
+
+setPixel KEYWORD2
+
+line KEYWORD2
+lineH KEYWORD2
+lineV KEYWORD2
+
+rect KEYWORD2
+rectFill KEYWORD2
+
+circle KEYWORD2
+circleFill KEYWORD2
+
+drawChar KEYWORD2
+
+drawBitmap KEYWORD2
+
+getDisplayWidth KEYWORD2
+getDisplayHeight KEYWORD2
+setDisplayWidth KEYWORD2
+setDisplayHeight KEYWORD2
+setColor KEYWORD2
+setDrawMode KEYWORD2
+getScreenBuffer KEYWORD2
+
+getFontWidth KEYWORD2
+getFontHeight KEYWORD2
+getTotalFonts KEYWORD2
+getFontType KEYWORD2
+setFontType KEYWORD2
+getFontStartChar KEYWORD2
+getFontTotalChar KEYWORD2
+
+scrollLeft KEYWORD2
+scrollRight KEYWORD2
+scollUp KEYWORD2
+scrollStop KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+
+BLACK	LITERAL1
+WHITE	LITERAL1
+NORM	LITERAL1
+XOR	LITERAL1
+PAGE	LITERAL1
+ALL	LITERAL1
+
