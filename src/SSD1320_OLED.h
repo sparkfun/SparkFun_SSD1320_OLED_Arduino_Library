@@ -37,9 +37,9 @@
 #define SETCHARGEPMP1       0x8D
 #define SETSEGREMAP         0xA0
 #define SETSTARTLINE        0xA2
-#define DISPLAYON           0xA4
+#define RESETALLON          0xA4
 #define DISPLAYALLON        0xA5
-#define NORMALDISPLAY       0xA6
+#define RESETINVERT         0xA6
 #define INVERTDISPLAY       0xA7
 #define SETMULTIPLEX        0xA8
 #define SETCHARGEPMP2       0xAC

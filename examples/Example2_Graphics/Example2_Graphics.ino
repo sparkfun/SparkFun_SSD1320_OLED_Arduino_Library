@@ -19,7 +19,7 @@
 */
 
 #include <SSD1320_OLED.h>
-#include "image.h" //Raw bytes of the Macaque monkey selfie
+#include "image2.h" //Raw bytes of the Macaque monkey selfie
 
 //Initialize the display with the follow pin connections
 SSD1320 flexibleOLED(10, 9); //10 = CS, 9 = RES
@@ -39,7 +39,7 @@ void setup()
   //Display is 32 rows tall so 32 * 80 = 2,560 bytes to write.
   for (int i = 0 ; i < 2560 ; i++)
   {
-    byte theByte = pgm_read_byte(LCD_graphic + 2559 - i);
+    byte theByte = pgm_read_byte(LCD_graphic2 + 2559 - i);
     theByte ^= 0xFF; //We must invert the byte because the software converted it backwards
     flexibleOLED.data(theByte); //Write byte directly to display
   }
@@ -49,8 +49,3 @@ void loop()
 {
 
 }
-
-
-
-
-

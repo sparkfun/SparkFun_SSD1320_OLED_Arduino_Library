@@ -129,8 +129,6 @@ void SSD1320::begin(uint16_t lcdWidth, uint16_t lcdHeight) {
   setDrawMode(NORM);
   setCursor(0, 0);
 
-  //memset(displayBuffer, 0xAA, SSD1320_HEIGHT * SSD1320_WIDTH / 4);
-
   powerUp();
 }
 
@@ -229,11 +227,9 @@ void SSD1320::setRowAddress(uint8_t address) {
 void SSD1320::powerUp() {
   digitalWrite(_rst, LOW); // Start with display off
   delay(1); // Wait for power to stabilize
-  delay(100); // Wait for power to stabilize
 
   digitalWrite(_rst, HIGH); // Set reset line high
   delayMicroseconds(3);
-  delay(1);
 
   command(DISPLAYOFF);       // 0xAE - Display off
 
@@ -278,7 +274,7 @@ void SSD1320::powerUp() {
   command(0x00);                           // 0x00
 
   // set entire display on/off
-  command(DISPLAYON);      // 0xA4 - Display on
+  command(RESETALLON);      // 0xA4 - Display on
 
   // set normal/inverse display
   command(NORMALDISPLAY);  // 0xA6 - Normal display (not inverted)
