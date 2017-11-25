@@ -17,6 +17,8 @@
   Requirements:
   * The BMP should be 160x32 pixels
   * The BMP should be in grayscale
+  * You can send non-grayscale bitmaps but this program will only display the blue channel
+  * You can send taller or wider bitmaps but it will be displayed incorrectly 
 
   To connect the display to an Arduino:
   (Arduino pin) = (Display pin)
@@ -93,8 +95,8 @@ void getBitmap()
   Serial.println("Note: File must be sent in binary");
 
   //Get BMP header
-  long fileSize = 0;
-  long offset = 0;
+  unsigned long fileSize = 0;
+  unsigned long offset = 0;
   for (int x = 0 ; x < 14 ; x++)
   {
     while (Serial.available() == false) delay(1); //Spin and do nothing
@@ -129,29 +131,29 @@ void getBitmap()
       }
     }
 
-    if (x == 2) fileSize |= (incoming << (8 * 0));
-    if (x == 3) fileSize |= (incoming << (8 * 1));
-    if (x == 4) fileSize |= (incoming << (8 * 2));
-    if (x == 5) fileSize |= (incoming << (8 * 3));
+    if (x == 2) fileSize |= ((long)incoming << (8 * 0));
+    if (x == 3) fileSize |= ((long)incoming << (8 * 1));
+    if (x == 4) fileSize |= ((long)incoming << (8 * 2));
+    if (x == 5) fileSize |= ((long)incoming << (8 * 3));
 
-    if (x == 10) offset |= (incoming << (8 * 0));
-    if (x == 11) offset |= (incoming << (8 * 1));
-    if (x == 12) offset |= (incoming << (8 * 2));
-    if (x == 13) offset |= (incoming << (8 * 3));
+    if (x == 10) offset |= ((long)incoming << (8 * 0));
+    if (x == 11) offset |= ((long)incoming << (8 * 1));
+    if (x == 12) offset |= ((long)incoming << (8 * 2));
+    if (x == 13) offset |= ((long)incoming << (8 * 3));
   }
 
   //Get BMP size and number of colors used
-  long colorsUsed = 0;
+  unsigned long colorsUsed = 0;
   for (int x = 0 ; x < 40 ; x++)
   {
     while (Serial.available() == false) delay(1); //Spin and do nothing
 
     byte incoming = Serial.read();
 
-    if (x == 32) colorsUsed |= (incoming << (8 * 0));
-    if (x == 33) colorsUsed |= (incoming << (8 * 1));
-    if (x == 34) colorsUsed |= (incoming << (8 * 2));
-    if (x == 35) colorsUsed |= (incoming << (8 * 3));
+    if (x == 32) colorsUsed |= ((long)incoming << (8 * 0));
+    if (x == 33) colorsUsed |= ((long)incoming << (8 * 1));
+    if (x == 34) colorsUsed |= ((long)incoming << (8 * 2));
+    if (x == 35) colorsUsed |= ((long)incoming << (8 * 3));
   }
 
   //Get look-up-table of colors
@@ -177,7 +179,7 @@ void getBitmap()
   //then down sample each 8-bit byte to a 4-bit,
   //then combine two bytes at a time into one byte
   //then send to the display
-  for (int i = 0 ; i < fileSize - offset - 1 ; i += 2)
+  for (unsigned long i = 0 ; i < fileSize - offset - 1 ; i += 2)
   {
     //Get the two bytes
     while (Serial.available() == false) delay(1); //Spin and do nothing
