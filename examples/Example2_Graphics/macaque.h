@@ -7,6 +7,9 @@
  Grayscale image of a macaque monkey taken by David Slater.
  
  More information here: https://www.sparkfun.com/sparkx/blog/2543
+
+ This was generated using the SparkFun BMPtoArray python script
+ See https://github.com/sparkfun/BMPtoArray for more info
 */
 #include <avr/pgmspace.h>
 
