@@ -277,7 +277,7 @@ void SSD1320::powerUp() {
   command(RESETALLON);      // 0xA4 - Display on
 
   // set normal/inverse display
-  command(NORMALDISPLAY);  // 0xA6 - Normal display (not inverted)
+  command(RESETINVERT);  // 0xA6 - Normal display (not inverted)
 
   // display on
   command(DISPLAYON);         // 0xAF - Display on
@@ -295,7 +295,7 @@ void SSD1320::invert(boolean inv) {
   if (inv)
     command(INVERTDISPLAY);
   else
-    command(NORMALDISPLAY);
+    command(RESETINVERT);
 }
 
 /** \brief Set contrast.
