@@ -12,7 +12,7 @@
   Pin 13 = SCLK on display carrier
   11 = SDIN
   10 = !CS
-  8 = !RES
+  9 = !RES
 
   The display is 160 pixels long and 32 pixels wide
   Each 4-bit nibble is the 4-bit grayscale for that pixel
