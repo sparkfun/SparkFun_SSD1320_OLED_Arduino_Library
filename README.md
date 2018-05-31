@@ -21,7 +21,7 @@ Documentation
 * **[Installing an Arduino Library Guide](https://learn.sparkfun.com/tutorials/installing-an-arduino-library)** - Basic information on how to install an Arduino library.
 * **[Product Repository](https://github.com/sparkfunx/Flexible_Grayscale_OLED)** - Main repository (including hardware files) for the Flexible Grayscale OLED Breakout.
 
-Products that use this Library 
+Products That Use This Library 
 ---------------------------------
 
 * [LCD-14606](https://www.sparkfun.com/products/14606) -  SparkFun red version
