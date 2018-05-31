@@ -24,7 +24,7 @@ Documentation
 Products that use this Library 
 ---------------------------------
 
-* [LCD-14606](https://www.sparkfun.com/products/14606) -  SparkFun Red version
+* [LCD-14606](https://www.sparkfun.com/products/14606) -  SparkFun red version
 * [SPX-14543](https://www.sparkfun.com/products/14543) - SparkX version
 
 Version History
