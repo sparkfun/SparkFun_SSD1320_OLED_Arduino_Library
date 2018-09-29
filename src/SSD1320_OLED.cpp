@@ -742,15 +742,15 @@ void SSD1320::setCursor(uint8_t x, uint8_t y) {
 /** \brief Set the display height.
     Set the height of the display. This will affect the setPixel function.
 */
-void SSD1320::setDisplayHeight(uint16_t) {
-  return _displayHeight;
+void SSD1320::setDisplayHeight(uint16_t H) {
+  _displayHeight = H;
 }
 
 /** \brief Set the display width.
     Set the width of the display. This will affect the setPixel function.
 */
-void SSD1320::setDisplayWidth(uint16_t) {
-  return _displayWidth;
+void SSD1320::setDisplayWidth(uint16_t W) {
+  _displayWidth = W;
 }
 
 /** \brief Get display height.
