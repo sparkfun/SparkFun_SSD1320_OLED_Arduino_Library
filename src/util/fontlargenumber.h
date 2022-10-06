@@ -1,11 +1,11 @@
-/****************************************************************************** 
+/******************************************************************************
 fontlargenumber.h
 Definition for large font
 
 This file was imported from the MicroView library, written by GeekAmmo
-(https://github.com/geekammo/MicroView-Arduino-Library), and released under 
-the terms of the GNU General Public License as published by the Free Software 
-Foundation, either version 3 of the License, or (at your option) any later 
+(https://github.com/geekammo/MicroView-Arduino-Library), and released under
+the terms of the GNU General Public License as published by the Free Software
+Foundation, either version 3 of the License, or (at your option) any later
 version.
 
 This program is distributed in the hope that it will be useful,
@@ -19,7 +19,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #ifndef FONTLARGENUMBER_H
 #define FONTLARGENUMBER_H
 
-#include <avr/pgmspace.h>
+#if (defined(__AVR__))
+#include <avr\pgmspace.h>
+#else
+#include <pgmspace.h>
+#endif
 
 static const unsigned char fontlargenumber[] PROGMEM = {
 	// first row defines - FONTWIDTH, FONTHEIGHT, ASCII START CHAR, TOTAL CHARACTERS, FONT MAP WIDTH HIGH, FONT MAP WIDTH LOW (2,56 meaning 256)
@@ -73,6 +77,6 @@ static const unsigned char fontlargenumber[] PROGMEM = {
 	0x7F, 0x7C, 0x7C, 0x3F, 0x07, 0x00, 0x00, 0x00, 0x00, 0x00, 0x7F, 0x7F, 0x00, 0x00, 0x00, 0x00,
 	0x00, 0x00, 0x00, 0x00, 0x00, 0x01, 0x1F, 0x3F, 0x7E, 0x7C, 0x7E, 0x3F, 0x1F, 0x01, 0x00, 0x00,
 	0x00, 0x00, 0x3E, 0x7C, 0x7C, 0x7E, 0x3F, 0x0F, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-	0x00, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
+	0x00, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
 };
 #endif
